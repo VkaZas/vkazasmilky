@@ -1,6 +1,7 @@
 'use strict';
 
-var _host_address = 'http://localhost:3000/';
+// var _host_address = 'http://localhost:3000/';
+var _host_address = 'http://vkazasmilky.herokuapp.com/';
 
 function request(url, obj, cb, method, err) {
     $.ajax({
