@@ -1,0 +1,43 @@
+$bgColor : #2c3338;
+$fgColor : #546e7a;
+$fgColorLight : #26a69a;
+$iconBgColor : #363b41;
+$textColor : whitesmoke;
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: $bgColor;
+
+  &>.valign-wrapper {
+    height: 100%;
+  }
+
+  .input-field {
+    &>i:first-child {
+      color: $textColor;
+      margin: 8px 0 0 4px;
+    }
+    input:focus + label, .prefix.active {
+      color: $fgColorLight!important;
+    }
+    input:focus {
+      border-bottom: 1px solid $fgColorLight !important;
+      box-shadow: 0 1px 0 0 $fgColorLight !important;
+    }
+    input {
+      color: $textColor;
+    }
+    p {
+      color: $textColor;
+      a {
+        color: $fgColorLight;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .btn {
+
+  }
+}

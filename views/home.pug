@@ -1,0 +1,25 @@
+extends main_layout
+
+block sub-links
+    link(rel='stylesheet' href='/stylesheets/home.css')
+    script(src='/javascripts/home.js')
+
+block body-content
+    .valign-wrapper
+        .container
+            .row
+                .col.l8.offset-l2
+                    label#search-label Search movie comment:
+            .row
+                .col.l8.offset-l2#search-box
+                    nav: .nav-wrapper
+                        .input-field
+                            input#search-bar(type='search' placeholder=' Name  /  Year  /  Type' required)
+                            label.label-icon(for='search-bar'): i.material-icons search
+                            i.material-icons close
+
+    .fixed-action-btn
+        a.btn-floating.btn-large.teal
+            i.material-icons.large extension
+        ul
+            li: a.btn-floating.cyan: i.material-icons chat

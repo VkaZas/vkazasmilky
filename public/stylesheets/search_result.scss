@@ -1,0 +1,35 @@
+@import "global.scss";
+
+.carousel {
+  margin-top: 100px;
+
+  .carousel-item {
+    width: 300px;
+    height: 300px;
+
+    .card {
+      height: 100%;
+
+      .card-title {
+        text-align: center;
+      }
+      .movie-info {
+        text-align: center;
+        span {
+          margin: auto 10px;
+        }
+      }
+    }
+  }
+}
+
+#comment-box {
+  z-index: 999;
+  width: 80%;
+  background-color: $textColor;
+  flex-grow: 5;
+
+  textarea {
+    padding: 5px 20px;
+  }
+}

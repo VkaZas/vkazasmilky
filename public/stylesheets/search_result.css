@@ -1,0 +1,43 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #2c3338; }
+  body > .valign-wrapper, html > .valign-wrapper {
+    height: 100%; }
+  body .input-field > i:first-child, html .input-field > i:first-child {
+    color: whitesmoke;
+    margin: 8px 0 0 4px; }
+  body .input-field input:focus + label, body .input-field .prefix.active, html .input-field input:focus + label, html .input-field .prefix.active {
+    color: #26a69a !important; }
+  body .input-field input:focus, html .input-field input:focus {
+    border-bottom: 1px solid #26a69a !important;
+    box-shadow: 0 1px 0 0 #26a69a !important; }
+  body .input-field input, html .input-field input {
+    color: whitesmoke; }
+  body .input-field p, html .input-field p {
+    color: whitesmoke; }
+    body .input-field p a, html .input-field p a {
+      color: #26a69a;
+      cursor: pointer; }
+
+.carousel {
+  margin-top: 100px; }
+  .carousel .carousel-item {
+    width: 300px;
+    height: 300px; }
+    .carousel .carousel-item .card {
+      height: 100%; }
+      .carousel .carousel-item .card .card-title {
+        text-align: center; }
+      .carousel .carousel-item .card .movie-info {
+        text-align: center; }
+        .carousel .carousel-item .card .movie-info span {
+          margin: auto 10px; }
+
+#comment-box {
+  z-index: 999;
+  width: 80%;
+  background-color: whitesmoke;
+  flex-grow: 5; }
+  #comment-box textarea {
+    padding: 5px 20px; }

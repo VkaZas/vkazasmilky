@@ -1,0 +1,38 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #2c3338; }
+  body > .valign-wrapper, html > .valign-wrapper {
+    height: 100%; }
+  body .input-field > i:first-child, html .input-field > i:first-child {
+    color: whitesmoke;
+    margin: 8px 0 0 4px; }
+  body .input-field input:focus + label, body .input-field .prefix.active, html .input-field input:focus + label, html .input-field .prefix.active {
+    color: #26a69a !important; }
+  body .input-field input:focus, html .input-field input:focus {
+    border-bottom: 1px solid #26a69a !important;
+    box-shadow: 0 1px 0 0 #26a69a !important; }
+  body .input-field input, html .input-field input {
+    color: whitesmoke; }
+  body .input-field p, html .input-field p {
+    color: whitesmoke; }
+    body .input-field p a, html .input-field p a {
+      color: #26a69a;
+      cursor: pointer; }
+
+.navbar-fixed {
+  position: fixed; }
+
+nav {
+  background-color: #374046; }
+  nav .brand-logo, nav .ul > a {
+    color: whitesmoke; }
+  nav #nav-header-wrapper {
+    padding: 0 50px; }
+  nav #nav-message {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-right: 20px; }
+  nav #nav-id {
+    margin-left: 5px;
+    color: #26a69a; }

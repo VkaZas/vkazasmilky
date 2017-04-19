@@ -1,0 +1,43 @@
+extends layout
+
+block links
+    link(rel='stylesheet', href='/stylesheets/account_layout.css')
+    script(src='/javascripts/' + type + '.js')
+
+block content
+    .valign-wrapper
+        .container
+            .row
+                .col.l6.offset-l3#account-box
+                    if (type === 'register')
+                        .row
+                            .input-field.col.l12
+                                i.material-icons.prefix face
+                                input(type='text' id='register-nickname')
+                                label(for='register-nickname') Nickname
+                    .row
+                        .input-field.col.l12
+                            i.material-icons.prefix account_box
+                            input(type='email' id=type + '-email')
+                            label(for=type + '-email') Email
+                    .row
+                        .input-field.col.l12
+                            i.material-icons.prefix lock
+                            input(type='password' id=type + '-password')
+                            label(for=type + '-password') Password
+                    if (type === 'register')
+                        .row
+                            .input-field.col.l12
+                                i.material-icons.prefix lock_open
+                                input(type='password' id='register-pw-confirm')
+                                label(for='register-pw-confirm') Confirm password
+                    .row
+                        .input-field.col.l12.center-align
+                            if (type === 'login')
+                                p Not a member? <a href='register'> click here </a> to register.
+                            else
+                                p Already has an account? <a href='login'> click here </a> to login.
+
+                    .row
+                        .input-field.col.l12.center-align
+                            a.waves-effect.waves-light.btn(id='btn-' + type) #{type}

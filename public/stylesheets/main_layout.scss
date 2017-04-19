@@ -1,0 +1,25 @@
+@import 'global.scss';
+
+.navbar-fixed {
+  position: fixed;
+}
+
+nav {
+  background-color: lighten($bgColor, 5);
+
+  .brand-logo, .ul>a {
+    color: $textColor;
+  }
+  #nav-header-wrapper {
+    padding: 0 50px;
+  }
+  #nav-message {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-right: 20px;
+  }
+  #nav-id {
+    margin-left: 5px;
+    color: $fgColorLight;
+  }
+}
