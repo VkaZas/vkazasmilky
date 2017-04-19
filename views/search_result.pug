@@ -2,12 +2,13 @@ extends main_layout
 
 block sub-links
     link(rel='stylesheet' href='/stylesheets/search_result.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js')
     script(src='/javascripts/search_result.js')
 
 block body-content
     .container
         .row
-            .col.l10.offset-l1
+            .col.l9.offset-l3
                 .carousel
                     each item in data
                         .carousel-item
@@ -18,8 +19,17 @@ block body-content
                                         span #{item.year}
                                         span #{item.type}
         .row
-            .col.l10.offset-l1
+            .col.l9.offset-l3
                 ul#comment-container
+
+    .side-nav.fixed#chat-box
+        #chat-msg-box
+            #chat-title
+            #chat-plane
+        #chat-input-box
+            .input-field
+                input(type='text')#chat-msg-input
+                a.btn-flat.teal-text.disabled#chat-msg-btn(onclick='sendMsg()') send
 
     .fixed-action-btn.toolbar
         a.btn-floating.btn-large.blue-grey
@@ -30,5 +40,5 @@ block body-content
                     textarea.materialize-textarea#textarea-comment
                     label#comment-label(for='textarea-comment') comment
             li
-                a.btn-flat: i.material-icons(onclick='postComment()') send
+                a.btn-flat: i.material-icons(onclick='postComment()') submit
 

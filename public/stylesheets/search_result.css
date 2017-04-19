@@ -34,10 +34,54 @@ body, html {
         .carousel .carousel-item .card .movie-info span {
           margin: auto 10px; }
 
-#comment-box {
-  z-index: 999;
-  width: 80%;
-  background-color: whitesmoke;
-  flex-grow: 5; }
-  #comment-box textarea {
-    padding: 5px 20px; }
+.fixed-action-btn.toolbar.active {
+  box-shadow: 0 -1px 2px 2px rgba(0, 0, 0, 0.12); }
+  .fixed-action-btn.toolbar.active #comment-box {
+    z-index: 995;
+    width: 80%;
+    background-color: whitesmoke;
+    flex-grow: 5; }
+    .fixed-action-btn.toolbar.active #comment-box textarea {
+      padding: 5px 20px; }
+
+#chat-box {
+  background-color: #333b41;
+  z-index: 996; }
+  #chat-box #chat-msg-box {
+    height: 92%;
+    width: 100%;
+    background-color: #333b41;
+    padding-top: 60px;
+    position: relative;
+    overflow: scroll; }
+    #chat-box #chat-msg-box #chat-title {
+      background-color: #333b41;
+      text-align: center;
+      vertical-align: middle;
+      padding: 15px 0;
+      color: #26a69a;
+      position: absolute;
+      width: 100%; }
+    #chat-box #chat-msg-box #chat-plane {
+      height: auto;
+      padding-top: 60px; }
+      #chat-box #chat-msg-box #chat-plane .chip {
+        background-color: transparent;
+        margin-left: 10px; }
+        #chat-box #chat-msg-box #chat-plane .chip .chat-speaker {
+          color: #26a69a; }
+        #chat-box #chat-msg-box #chat-plane .chip .chat-content {
+          color: whitesmoke; }
+  #chat-box #chat-input-box {
+    height: 8%;
+    width: 100%; }
+    #chat-box #chat-input-box .input-field {
+      margin-top: 0; }
+      #chat-box #chat-input-box .input-field input {
+        width: 70%;
+        padding: 0 5px;
+        margin-left: 10px;
+        margin-top: 10px;
+        height: 2rem; }
+      #chat-box #chat-input-box .input-field .btn-flat {
+        padding: 10px 0 0 10px; }

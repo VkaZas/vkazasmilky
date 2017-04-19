@@ -1,14 +1,69 @@
+var currentMovie = null;
+var socket = io(_host_address);
+
 $(function(){
-   $('.carousel').carousel();
+    $('.carousel').carousel();
+    $('#chat-msg-input').keydown(function(e) {
+        if (e.which == 13 && !!currentMovie) {
+            e.preventDefault();
+            sendMsg();
+        }
+    });
+
+    socket.on('msg-recv', function(data) {
+        if (data.movie == currentMovie.movie && data.year == currentMovie.year) {
+            addMsg(data.nickname, data.msg);
+        }
+    });
+
+    socket.on('sync-room-back', function(data) {
+        if (!!data) {
+            for (var i=0; i<data.length; i++) {
+                addMsg(data[i]['nickname'], data[i]['content']);
+            }
+        }
+    });
 });
 
-var currentMovie;
+function addMsg(nickname, msg) {
+    var $plane = $('#chat-plane');
+    var $msgChip =
+        $('<div><div class="chip">' +
+            '<span class="chat-speaker">' + nickname + ' : </span>' +
+            '<span class="chat-content"> ' + msg + '</span>' +
+            '</div></div>');
+    $plane.append($msgChip);
+    $('#chat-msg-box').scrollTop($plane.get(0).scrollHeight);
+}
+
+function loadChatroom() {
+    $('#chat-msg-btn').removeClass('disabled');
+    $('#chat-title').text(currentMovie.movie + ' Room');
+    $('#chat-plane').empty();
+
+    socket.emit('sync-room', {movie: currentMovie.movie, year: currentMovie.year});
+}
+
+function sendMsg() {
+    var $chatInput = $('#chat-msg-input');
+    socket.emit('msg-send', {
+        msg: $chatInput.val(),
+        movie: currentMovie.movie,
+        year: currentMovie.year,
+        email: $.cookie('email'),
+        nickname: $.cookie('nickname')
+    });
+    $chatInput.val('');
+}
 
 function loadComment(movie, year) {
     currentMovie = {
         movie: movie,
         year: year
     };
+
+    loadChatroom();
+
     $('#comment-label').text('comment for ' + movie);
     request(_host_address + 'search/comments', {movie : movie, year: year}, function(data, status) {
         var $container = $('#comment-container');
