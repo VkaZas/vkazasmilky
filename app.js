@@ -13,6 +13,7 @@ var index = require('./routes/index');
 var login = require('./routes/login');
 var register = require('./routes/register');
 var search_result = require('./routes/search_result');
+var theater_map = require('./routes/theater_map');
 var users = require('./routes/users');
 
 var app = express();
@@ -50,6 +51,7 @@ app.use('/home', home);
 app.use('/login', login);
 app.use('/register', register);
 app.use('/search', search_result);
+app.use('/theater_map', theater_map);
 app.use('/users', users);
 
 

@@ -1,0 +1,9 @@
+@import 'global.scss';
+
+#map-container {
+    height: 500px;
+    #theater-map {
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,17 @@
+extends main_layout
+
+block sub-links
+    link(rel='stylesheet' href='/stylesheets/theater_map.css')
+    script(src='/javascripts/theater_map.js')
+
+block body-content
+    .valign-wrapper
+        .container
+            .row
+                .col.l10.offset-l1
+                    h5 Theater Map
+            .row
+                .col.l10.offset-l1#map-container
+                    #theater-map
+
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCecJ8mvbcO3_fY4UpBUgcVeb5x-1bwUcY&callback=initMap' async defer)

@@ -23,3 +23,39 @@ nav {
     color: $fgColorLight;
   }
 }
+
+#dropdown-myacc-content {
+  width: 250px;
+  height: auto;
+  background-color: lighten($bgColor, 5);
+
+  li:not(.divider) {
+    color: $fgColorLight;
+    text-align: center;
+    padding-top: 10px;
+    word-wrap: break-word;
+  }
+
+  li:hover {
+    background-color: lighten($bgColor, 8);
+  }
+
+  #myacc-comments {
+    padding-top: 0;
+    max-height: 400px;
+    overflow-y: scroll;
+
+    .chip {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      padding-right: 5px;
+
+      i {
+        position: absolute;
+        top: 0;
+        right: 7px;
+      }
+    }
+  }
+}

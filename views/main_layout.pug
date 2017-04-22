@@ -2,7 +2,7 @@ extends layout
 
 block links
     link(rel='stylesheet' href='/stylesheets/main_layout.css')
-    script(src='/javascripts/cookie_check.js')
+    script(src='/javascripts/main_layout.js')
 
     block sub-links
 
@@ -14,7 +14,18 @@ block content
                 a.brand-logo(href='home') CS411
                 ul.right.hide-on-med-and-down
                     li: span#nav-message Welcome!
-                    li: a.nav-link(href='account') My Account
-                    li: a.nav-link#btn-logout(href='javascript:void(0)') Logout
+                    li: a.nav-link.dropdown-button#dropdown-myacc(href='#!'
+                        data-activates='dropdown-myacc-content'
+                        data-beloworigin='true'
+                        data-constrainwidth='false') My Account
+                            i.material-icons.right arrow_drop_down
+                    li: a.nav-link#btn-logout(href='javascript:void(0)' onclick='logout()') Logout
+
+    ul.dropdown-content#dropdown-myacc-content
+        li#myacc-email
+        li.divider
+        li#myacc-contribute
+        li#myacc-comments
+
 
     block body-content

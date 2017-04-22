@@ -19,6 +19,8 @@ body, html {
     body .input-field p a, html .input-field p a {
       color: #26a69a;
       cursor: pointer; }
+  body h5, html h5 {
+    color: whitesmoke; }
 
 .navbar-fixed {
   position: fixed; }
@@ -36,3 +38,28 @@ nav {
   nav #nav-id {
     margin-left: 5px;
     color: #26a69a; }
+
+#dropdown-myacc-content {
+  width: 250px;
+  height: auto;
+  background-color: #374046; }
+  #dropdown-myacc-content li:not(.divider) {
+    color: #26a69a;
+    text-align: center;
+    padding-top: 10px;
+    word-wrap: break-word; }
+  #dropdown-myacc-content li:hover {
+    background-color: #3e484f; }
+  #dropdown-myacc-content #myacc-comments {
+    padding-top: 0;
+    max-height: 400px;
+    overflow-y: scroll; }
+    #dropdown-myacc-content #myacc-comments .chip {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      padding-right: 5px; }
+      #dropdown-myacc-content #myacc-comments .chip i {
+        position: absolute;
+        top: 0;
+        right: 7px; }

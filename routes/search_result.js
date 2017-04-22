@@ -42,4 +42,16 @@ router.post('/add_comment', function(req, res, next) {
     });
 });
 
+router.post('/get_user_comments', (req, res, next) => {
+    var email = req.body.email;
+    req.getConnection((err, conn) => {
+        var sql = `SELECT info_id, comments, name FROM info WHERE email = '${email}'`;
+        conn.query(sql, [], (err, row) => {
+            res.json(JSON.stringify(row));
+        });
+    });
+});
+
+
+
 module.exports = router;

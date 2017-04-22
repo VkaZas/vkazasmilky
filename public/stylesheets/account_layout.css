@@ -19,6 +19,8 @@ body, html {
     body .input-field p a, html .input-field p a {
       color: #26a69a;
       cursor: pointer; }
+  body h5, html h5 {
+    color: whitesmoke; }
 
 #account-box {
   border-radius: 6px;

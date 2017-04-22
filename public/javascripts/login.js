@@ -14,7 +14,7 @@ $(function(){
             if (data['result'] == '1') {
                 $.cookie('email', obj.email);
                 $.cookie('nickname', data['nickname']);
-                Materialize.toast('Login success! Jumping to home page...', 3000, '', function() {
+                Materialize.toast('Login success! Jumping to home page...', 2000, '', function() {
                     window.location.href = 'home';
                 });
             } else {
