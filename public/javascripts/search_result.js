@@ -73,7 +73,7 @@ function loadComment(movie, year) {
             var ele = '<li style="opacity: 0">' +
                         '<div class="card blue-grey darken-2">' +
                             '<div class="card-content white-text">' +
-                                '<span class="card-title">' + data[i].email + '</span>' +
+                                '<span class="card-title">' + data[i].username + '</span>' +
                                 '<p>' + data[i].comments + '</p>' +
                             '</div>' +
                             '<div class="card-action">' +

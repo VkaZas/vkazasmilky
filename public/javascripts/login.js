@@ -8,6 +8,7 @@ $(function(){
         if (validate(dataObj)) login(dataObj);
     });
 
+
     function login(obj) {
         request(_host_address + 'login', obj, function (data, status) {
             console.log(data);
@@ -29,6 +30,8 @@ $(function(){
         return true;
     }
 });
+
+
 
 
 

@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 router.post('/comments', function(req, res, next) {
     var data = req.body;
     req.getConnection((err, conn) => {
-        var sql = `SELECT * FROM info WHERE name = '${data['movie']}' AND year = '${data['year']}'`;
+        var sql = `SELECT distinct username,comments FROM info natural join user WHERE name = '${data['movie']}' AND year = '${data['year']}'`;
         conn.query(sql, [], (err, row) => {
             if (!!row) res.json(JSON.stringify(row));
             else res.json(JSON.stringify({}));

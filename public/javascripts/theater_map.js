@@ -39,4 +39,5 @@ function getTheaterLocation(coords, map) {
     });
 }
 
+
 // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-40.112375199999995,-88.2272539&radius=500&type=movie_theater&key=AIzaSyCecJ8mvbcO3_fY4UpBUgcVeb5x-1bwUcY
