@@ -1,6 +1,21 @@
 var currentMovie = null;
 var socket = io(_host_address);
 
+var bgImages = {
+    'Logan' : 'url(http://www.impawards.com/2017/posters/logan_ver5.jpg)',
+    'Get out' : 'url(http://www.impawards.com/2017/posters/get_out_ver2.jpg)',
+    'Beauty and the Beast' : 'url(http://www.impawards.com/2017/posters/beauty_and_the_beast_ver3_xlg.jpg)',
+    'The Shack' : 'url(http://www.impawards.com/2017/posters/shack.jpg)',
+    'T2 Trainspotting' : 'url(http://www.impawards.com/intl/uk/2017/posters/t_two_trainspotting_ver3.jpg)',
+    'Song to Song' : 'url(http://www.impawards.com/2017/posters/song_to_song.jpg)',
+    'The Belko Experiment' : 'url(http://www.impawards.com/2017/posters/belko_experiment.jpg)',
+    'Frantz' : 'url(http://www.impawards.com/intl/misc/2016/posters/frantz.jpg)',
+    'They Call Me Jeeg' : 'url(http://www.impawards.com/intl/italy/2016/posters/lo_chiamavano_jeeg_robot.jpg)',
+    'La La Land' : 'url(http://www.impawards.com/2016/posters/la_la_land_ver3.jpg)',
+    'Whiplash' : 'url(http://www.impawards.com/2014/posters/whiplash_ver2.jpg)',
+    'Creep' : 'url(http://www.impawards.com/2015/posters/creep.jpg)'
+};
+
 $(function(){
     $('.carousel').carousel();
     $('#chat-msg-input').keydown(function(e) {
@@ -9,6 +24,13 @@ $(function(){
             sendMsg();
         }
     });
+
+    $('.movie-container').each(function() {
+        var name = $(this).data('movie');
+        $(this).css('background-image', bgImages[name]);
+    });
+
+    // $($('.movie-container').get(0)).css('background-image', bgImages['Logan']);
 
     socket.on('msg-recv', function(data) {
         if (data.movie == currentMovie.movie && data.year == currentMovie.year) {
