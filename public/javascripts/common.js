@@ -1,7 +1,7 @@
 'use strict';
 
-var _host_address = 'http://localhost:3000/';
-// var _host_address = 'https://vkazasmilky.herokuapp.com/';
+// var _host_address = 'http://localhost:3000/';
+var _host_address = 'https://vkazasmilky.herokuapp.com/';
 var _googleapi_key = 'AIzaSyCecJ8mvbcO3_fY4UpBUgcVeb5x-1bwUcY';
 var _googleapi_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json';
 
