@@ -13,7 +13,7 @@ var bgImages = {
     'They Call Me Jeeg' : 'url(http://www.impawards.com/intl/italy/2016/posters/lo_chiamavano_jeeg_robot.jpg)',
     'La La Land' : 'url(http://www.impawards.com/2016/posters/la_la_land_ver3.jpg)',
     'Whiplash' : 'url(http://www.impawards.com/2014/posters/whiplash_ver2.jpg)',
-    'Creep' : 'url(http://www.impawards.com/2015/posters/creep.jpg)'
+    'Creed' : 'url(http://www.impawards.com/2015/posters/creed.jpg)'
 };
 
 $(function(){
@@ -23,7 +23,7 @@ $(function(){
             e.preventDefault();
             sendMsg();
         }
-    });
+    });d
 
     $('.movie-container').each(function() {
         var name = $(this).data('movie');
