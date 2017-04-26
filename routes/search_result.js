@@ -4,7 +4,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     var keyword = req.query['keyword'];
     req.getConnection((err, conn) => {
-        var sql = `SELECT * FROM movie WHERE name LIKE '${keyword}' OR name LIKE '%${keyword}' OR name LIKE '${keyword}%' OR name LIKE '%${keyword}%' OR year LIKE '${keyword}' OR year LIKE '%${keyword}' OR year LIKE '${keyword}%' OR year LIKE '%${keyword}%' OR type LIKE '${keyword}' OR type LIKE '%${keyword}' OR type LIKE '${keyword}%' OR type LIKE '%${keyword}%'`;
+        var sql = `SELECT * FROM movie WHERE name LIKE '${keyword}' OR name LIKE '%${keyword}' OR name LIKE '${keyword}%' OR name LIKE '%${keyword}%' OR year LIKE '${keyword}' OR year LIKE '%${keyword}' OR year LIKE '${keyword}%' OR year LIKE '%${keyword}%' OR type LIKE '${keyword}' OR type LIKE '%${keyword}' OR type LIKE '${keyword}%' OR type LIKE '%${keyword}%' OR actor LIKE '${keyword}' OR actor LIKE '%${keyword}' OR actor LIKE '${keyword}%' OR actor LIKE '%${keyword}%' OR director LIKE '${keyword}' OR director LIKE '%${keyword}' OR director LIKE '${keyword}%' OR director LIKE '%${keyword}%'`;
         conn.query(sql, [], (err, row) => {
             res.render('search_result', {title: 'Search Result', data: row});
         })
